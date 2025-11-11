@@ -32,6 +32,14 @@ export const StyledForeignObject = styled.foreignObject<{ $isObject?: boolean }>
   overflow: hidden;
   pointer-events: none;
 
+  /* allow interactive children (buttons/inputs) to receive pointer events */
+  & > .interactive {
+    pointer-events: all;
+  }
+  & > .interactive * {
+    pointer-events: all;
+  }
+
   &.searched {
     background: rgba(27, 255, 0, 0.1);
     border: 1px solid ${({ theme }) => theme.TEXT_POSITIVE};
